@@ -1,0 +1,23 @@
+INSTRUCCIONES PARA CREAR ICONOS DE LA APP
+==========================================
+
+Necesitas crear 2 imágenes con el escudo o colores de Nacional:
+
+1. icon-192.png (192x192 píxeles)
+2. icon-512.png (512x512 píxeles)
+
+OPCIÓN RÁPIDA:
+--------------
+1. Busca en Google Images: "escudo nacional uruguay png"
+2. Descarga una imagen del escudo
+3. Ve a https://www.iloveimg.com/resize-image
+4. Sube la imagen y crea dos versiones:
+   - Una de 192x192 píxeles → guárdala como "icon-192.png"
+   - Una de 512x512 píxeles → guárdala como "icon-512.png"
+5. Coloca ambos archivos en la carpeta temporal-aphelion
+6. Súbelos a GitHub junto con los demás archivos
+
+ALTERNATIVA:
+------------
+Puedes usar cualquier editor de imágenes (Paint, Photoshop, Canva, etc.)
+para crear cuadrados con los colores de Nacional (azul #0033A0, blanco, rojo #DC143C)

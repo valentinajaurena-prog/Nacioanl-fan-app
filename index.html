@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacional - App para Hinchas Tricolores</title>
+    <meta name="description"
+        content="Aplicación oficial para hinchas del Club Nacional de Football - Quiz, jugadores, puzzles, pintar por números y más">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0033A0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Nacional">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Página de Inicio -->
+    <div id="home-page" class="page active">
+        <div class="hero-section">
+            <div class="tricolor-banner"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="club-name">CLUB NACIONAL</span>
+                    <span class="subtitle">DE FOOTBALL</span>
+                </h1>
+                <p class="hero-tagline">El Decano del Fútbol Uruguayo</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50</div>
+                        <div class="stat-label">Títulos Uruguayos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Copas Libertadores</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Copas Intercontinentales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-grid">
+            <button class="menu-card" onclick="navigateTo('quiz')">
+                <div class="card-icon">🎯</div>
+                <h2>Quiz Tricolor</h2>
+                <p>Demuestra tu conocimiento sobre la historia del club</p>
+            </button>
+
+            <button class="menu-card" onclick="navigateTo('players')">
+                <div class="card-icon">⚽</div>
+                <h2>Jugadores</h2>
+                <p>Conoce el plantel actual y las figuras históricas</p>
+            </button>
+
+            <button class="menu-card" onclick="navigateTo('puzzles')">
+                <div class="card-icon">🧩</div>
+                <h2>Puzzles</h2>
+                <p>Arma puzzles con imágenes icónicas de Nacional</p>
+            </button>
+
+            <button class="menu-card" onclick="navigateTo('paint')">
+                <div class="card-icon">🎨</div>
+                <h2>Pintar por Números</h2>
+                <p>Crea arte tricolor pintando por números</p>
+            </button>
+
+            <!-- Tarjeta de Últimas Noticias -->
+            <div class="preview-card">
+                <h2>📰 Últimas Noticias</h2>
+                <div id="news-preview"></div>
+                <button class="view-all-btn" onclick="navigateTo('news')">Ver todas las noticias</button>
+            </div>
+
+            <!-- Tarjeta de Redes Sociales -->
+            <div class="preview-card">
+                <h2>📱 Redes Sociales</h2>
+                <div id="social-preview"></div>
+                <button class="view-all-btn" onclick="navigateTo('social')">Ver feed completo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Quiz -->
+    <div id="quiz-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Quiz Tricolor</h1>
+        </div>
+        <div class="quiz-container">
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- Página de Jugadores -->
+    <div id="players-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Jugadores de Nacional</h1>
+        </div>
+        <div class="players-tabs">
+            <button class="tab-btn active" onclick="showPlayerTab('activos')">Plantel Activo</button>
+            <button class="tab-btn" onclick="showPlayerTab('figuras')">Figuras Históricas</button>
+        </div>
+        <div id="players-content"></div>
+    </div>
+
+    <!-- Página de Puzzles -->
+    <div id="puzzles-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Puzzles Tricolores</h1>
+        </div>
+        <div id="puzzles-content"></div>
+    </div>
+
+    <!-- Página de Pintar por Números -->
+    <div id="paint-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Pintar por Números</h1>
+        </div>
+        <div id="paint-content"></div>
+    </div>
+
+    <!-- Página de Noticias -->
+    <div id="news-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Últimas Noticias</h1>
+        </div>
+        <div id="news-content"></div>
+    </div>
+
+    <!-- Página de Resultados -->
+    <div id="results-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Tus Resultados</h1>
+        </div>
+        <div id="results-content"></div>
+    </div>
+
+    <!-- Página de Redes Sociales -->
+    <div id="social-page" class="page">
+        <div class="page-header">
+            <button class="back-btn" onclick="navigateTo('home')">← Volver</button>
+            <h1>Redes Sociales</h1>
+        </div>
+        <div id="social-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <!-- Registro del Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registrado:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('Error al registrar Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
